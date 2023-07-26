@@ -1,27 +1,27 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const request = require('request');
-
-const app = express();
-
-app.use(express.static("public"));
-app.use(bodyParser.urlencoded({extended: true}));
-
-app.get("/", function(req, res){
-  res.sendFile(__dirname + "/signup.html");
+// app.js
+document.addEventListener('DOMContentLoaded', function () {
+  // Add event listener to the form submission
+  const form = document.querySelector('.form-signin');
+  form.addEventListener('submit', handleFormSubmit);
 });
 
-app.post("/", function(req, res){
- 
-    var firstName = req,body,fName;
-    var lastName req, body, lName;
-    var email = req,body,email;
+function handleFormSubmit(event) {
+  event.preventDefault();
 
-    console.log(firstName, lastName, email);
-    
+  // Check if all fields are filled
+  const fName = document.querySelector('input[name="fName"]').value;
+  const lName = document.querySelector('input[name="lName"]').value;
+  const email = document.querySelector('input[name="email"]').value;
 
-});
+  // Email validation using a simple regular expression pattern
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const isEmailValid = emailPattern.test(email);
 
-app.listen(3000, function() {
-  console.log("Server is running on port 3000");
-});
+  if (fName.trim() === '' || lName.trim() === '' || !isEmailValid) {
+    // If any of the fields are empty or email is invalid, do nothing
+    return;
+  } else {
+    // If all fields are filled and email is valid, redirect to success.html
+    window.location.href = 'success.html';
+  }
+}

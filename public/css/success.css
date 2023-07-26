@@ -1,0 +1,49 @@
+/* success.css */
+
+/* Center the form vertically and horizontally */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+  }
+  
+  /* Style the form container */
+  .form-container {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    color: blue;
+  }
+  
+  /* Style the form inputs and button */
+  .form-control {
+    margin-bottom: 10px;
+  }
+  
+  .btn-primary {
+    background-color: blue;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0f4cc1; /* Darker shade of blue on hover */
+  }
+  
+  /* Style the logo image */
+  .logo {
+    display: block;
+    margin: 0 auto 20px; /* Center the image */
+  }
+  
+  /* Additional styles for the footer */
+  .footer {
+    margin-top: 40px;
+    font-size: 12px;
+    text-align: center;
+    color: blue;
+  }
+  
